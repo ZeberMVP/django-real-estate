@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django_countries import CountryField
+from django_countries.fields import CountryField
 from apps.common.models import TimeStampedUUIDModel
 
 User = get_user_model()
@@ -135,7 +135,7 @@ class Property(TimeStampedUUIDModel):
         return round(property_price + tax_amount, 2)
 
 
-class PropertyView(TimeStampedUUIDModel):
+class PropertyViews(TimeStampedUUIDModel):
     ip = models.CharField(verbose_name=_("IP Address"), max_length=250)
     property = models.ForeignKey(
         Property, related_name="property_views", on_delete=models.CASCADE
