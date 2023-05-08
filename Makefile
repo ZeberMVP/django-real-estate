@@ -59,8 +59,7 @@ black:
 	docker compose exec api black --exclude=migrations .
 
 isort-check:
-	docker compose exec api isort . --check-only --skip
-	migrations 
+	docker compose exec api isort . --check-only --skip env --skip migrations
 
 isort-diff:
 	docker compose exec api isort . --diff --skip env --skip migrations
