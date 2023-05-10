@@ -8,7 +8,7 @@ set -o nounset
 
 postgres_ready() {
 python << END
-import sys 
+import sys
 import psycopg2
 try:
     psycopg2.connect(
@@ -25,9 +25,9 @@ END
 }
 
 until postgres_ready; do
- >&2 echo "Waiting for PostgreSQL to become available...:-("
+ >&2 echo "Waiting for PostgreSQL to become available....:-("
  sleep 1
-done 
->&2 echo "PostgreSQL is ready!!!...:-)"
+done
+>&2 echo "PostgreSQL is ready!!!!...:-)"
 
 exec "$@"
