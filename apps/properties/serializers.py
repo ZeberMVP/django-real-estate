@@ -8,6 +8,11 @@ from .models import Property, PropertyViews
 class PropertySerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     country = CountryField(name_only=True)
+    cover_photo = serializers.SerializerMethodField()
+    photo1 = serializers.SerializerMethodField()
+    photo2 = serializers.SerializerMethodField()
+    photo3 = serializers.SerializerMethodField()
+    photo4 = serializers.SerializerMethodField()
 
     class Meta:
         model = Property
