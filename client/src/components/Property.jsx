@@ -5,9 +5,10 @@ import { GiStairs } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 const Property = ({ property }) => {
-    function numberWithCommas(x) {
+    const numberWithCommas = function (x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+    };
+
 
     return (
         <Card style={{ width: "18rem" }}>
