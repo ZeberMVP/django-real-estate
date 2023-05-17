@@ -9,6 +9,7 @@ class PropertySerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     country = CountryField(name_only=True)
     cover_photo = serializers.SerializerMethodField()
+    profile_photo = serializers.SerializerMethodField()
     photo1 = serializers.SerializerMethodField()
     photo2 = serializers.SerializerMethodField()
     photo3 = serializers.SerializerMethodField()
@@ -17,7 +18,9 @@ class PropertySerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
         fields = [
+            "id",
             "user",
+            "profile_photo",
             "title",
             "slug",
             "ref_code",
@@ -61,6 +64,9 @@ class PropertySerializer(serializers.ModelSerializer):
 
     def get_photo4(self, obj):
         return obj.photo4.url
+
+    def get_profile_photo(self, obj):
+        return obj.user.profile.profile_photo.url
 
 
 class PropertyCreateSerializer(serializers.ModelSerializer):
