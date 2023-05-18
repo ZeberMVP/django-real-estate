@@ -49,7 +49,7 @@ const Header = () => {
                                 <NavDropdown
                                     title={
                                         user.firstName
-                                        | "Welcome"
+                                        || "Welcome"
                                     }
                                     id="username"
                                 >

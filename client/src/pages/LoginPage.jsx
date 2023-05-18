@@ -103,8 +103,8 @@ const LoginPage = () => {
 
                 <Row className="py-3">
                     <Col>
-                        New Customer?
-                        <Link to="/register">Register Here.....</Link>
+                        New Customer? &nbsp;
+                        <Link to="/register">Register Here</Link>
                     </Col>
                 </Row>
             </Container>
