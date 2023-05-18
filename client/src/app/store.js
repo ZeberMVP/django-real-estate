@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import authReducer from "../features/auth/authSlice";
 import propertyReducer from "../features/properties/propertySlice";
 
 export const store = configureStore({
